@@ -14,7 +14,7 @@
                     "thread": "%thread",
                     "logger": "%logger",
                     "message": "%message",
-                    "traceId": "%X{traceId: -NONE}",
+                    "traceId": "%X{traceId: -NONE}"
                     }
                 </pattern>
             </label>
