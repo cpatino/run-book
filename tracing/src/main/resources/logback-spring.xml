@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <springProperty scope="context" name="Application" source="spring.application.name" />
+
+    <appender name="jsonConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+        <format>
+            <label>
+                <pattern>
+                    {
+                    "app": "${appName}",
+                    "level": "%level",
+                    "thread": "%thread",
+                    "logger": "%logger",
+                    "message": "%message",
+                    "traceId": "%X{traceId: -NONE}",
+                    }
+                </pattern>
+            </label>
+        </format>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="jsonConsoleAppender" />
+    </root>
+</configuration>
