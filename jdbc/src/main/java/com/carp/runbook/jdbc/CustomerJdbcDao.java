@@ -1,6 +1,5 @@
 package com.carp.runbook.jdbc;
 
-import com.carp.runbook.jdbc.Customer;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -41,7 +40,7 @@ public class CustomerJdbcDao {
         return jdbcTemplate.update("update customer set name = ? where id = ?", newCustomer.getName(), newCustomer.getId());
     }
 
-    class CustomerRowMapper implements RowMapper<Customer> {
+    static class CustomerRowMapper implements RowMapper<Customer> {
 
         @Override
         public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
