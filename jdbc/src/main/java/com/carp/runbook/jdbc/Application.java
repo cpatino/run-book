@@ -23,10 +23,11 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        log.info("All users -> {}", customerJdbcDao.findAll());
-        log.info("User id 10001 -> {}", customerJdbcDao.findById(10001L));
+        log.info("All customers -> {}", customerJdbcDao.findAll());
+        log.info("Customer id 10001 -> {}", customerJdbcDao.findById(10001L));
         log.info("Deleting 10003 -> No of Rows Deleted - {}", customerJdbcDao.deleteById(10003L));
-        log.info("Inserting 10004 -> No of Rows Deleted - {}", customerJdbcDao.insert(new Customer(10004L, "DOLOR", Instant.now())));
-        log.info("Update 10002 -> No of Rows Deleted - {}", customerJdbcDao.update(new Customer(10002L, "SIT", Instant.now())));
+        log.info("Inserting 10004 -> No of Rows Inserted - {}", customerJdbcDao.insert(new Customer(10004L, "DOLOR", Instant.now())));
+        log.info("Updating 10002 -> No of Rows Updated - {}", customerJdbcDao.update(new Customer(10002L, "SIT", Instant.now())));
+        log.info("All customers -> {}", customerJdbcDao.findAll());
     }
 }
