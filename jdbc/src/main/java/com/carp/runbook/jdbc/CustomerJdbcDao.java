@@ -1,6 +1,6 @@
-package com.carp.runbook.jdbc.dao;
+package com.carp.runbook.jdbc;
 
-import com.carp.runbook.jdbc.entity.Customer;
+import com.carp.runbook.jdbc.Customer;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;

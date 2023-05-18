@@ -1,7 +1,5 @@
 package com.carp.runbook.jdbc;
 
-import com.carp.runbook.jdbc.dao.CustomerJdbcDao;
-import com.carp.runbook.jdbc.entity.Customer;
 import org.slf4j.Logger;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

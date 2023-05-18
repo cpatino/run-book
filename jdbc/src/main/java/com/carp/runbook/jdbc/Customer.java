@@ -1,4 +1,4 @@
-package com.carp.runbook.jdbc.entity;
+package com.carp.runbook.jdbc;
 
 import java.time.Instant;
 
