@@ -28,8 +28,10 @@ public class Application implements CommandLineRunner {
         log.info("Customer id 10001 -> {}", customerJpaRepository.findById(10001L));
         log.info("Deleting 10003 -> ");
         customerJpaRepository.deleteById(10003L);
-        log.info("Inserting -> {}", customerJpaRepository.save(new Customer("DOLOR", Instant.now())));
-        log.info("Updating 10002 -> {}", customerJpaRepository.save(new Customer(10002L, "SIT", Instant.now())));
+        log.info("Inserting -> {}", customerJpaRepository.save(new Customer("DOLOR")));
+        Customer customerToBeUpdated = customerJpaRepository.findById(10002L).orElseThrow();
+        customerToBeUpdated.setName("SIT");
+        log.info("Updating 10002 -> {}", customerJpaRepository.save(customerToBeUpdated));
         log.info("All customers -> {}", customerJpaRepository.findAll());
         log.info("All customers with id > 10000 -> {}", customerJpaRepository.findAllWithIdGreaterThan10000());
     }
