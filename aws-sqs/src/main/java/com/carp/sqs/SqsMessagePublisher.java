@@ -12,16 +12,16 @@ import java.util.Map;
 import java.util.Random;
 
 @Component
-class SqsMessageCreator implements CommandLineRunner {
+class SqsMessagePublisher implements CommandLineRunner {
 
-    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(SqsMessageCreator.class);
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(SqsMessagePublisher.class);
 
     private final SqsTemplate sqsTemplate;
     private final SqsAsyncClient sqsClient;
     private final ObjectMapper objectMapper;
     private final Random randomService;
 
-    public SqsMessageCreator(SqsAsyncClient sqsAsyncClient) {
+    SqsMessagePublisher(SqsAsyncClient sqsAsyncClient) {
         this.sqsClient = sqsAsyncClient;
         sqsTemplate = SqsTemplate.newTemplate(sqsAsyncClient);
         objectMapper = new ObjectMapper();
