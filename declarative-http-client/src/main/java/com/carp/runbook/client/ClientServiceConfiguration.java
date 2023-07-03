@@ -7,7 +7,12 @@ import org.springframework.web.reactive.function.client.support.WebClientAdapter
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
 @Configuration
-class ProxyFactoryConfiguration {
+class ClientServiceConfiguration {
+
+    @Bean
+    CustomerService customerService(HttpServiceProxyFactory httpServiceProxyFactory) {
+        return httpServiceProxyFactory.createClient(CustomerService.class);
+    }
 
     @Bean
     HttpServiceProxyFactory httpServiceProxyFactory() {

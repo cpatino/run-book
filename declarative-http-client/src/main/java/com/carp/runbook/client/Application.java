@@ -4,7 +4,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
@@ -13,8 +12,8 @@ public class Application implements CommandLineRunner {
 
     private final CustomerService customerService;
 
-    public Application(HttpServiceProxyFactory httpServiceProxyFactory) {
-        this.customerService = httpServiceProxyFactory.createClient(CustomerService.class);
+    public Application(CustomerService customerService) {
+        this.customerService = customerService;
     }
 
     public static void main(String[] args) {
