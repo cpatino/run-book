@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.carp.runbook</groupId>
-	<artifactId>circuit</artifactId>
+	<artifactId>circuit-breaker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>circuit-breaker</name>
 	<description>Example project for Spring Boot + Resilience4J</description>

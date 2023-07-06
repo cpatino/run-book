@@ -12,9 +12,9 @@ resilience4j.circuitbreaker:
     default:
       registerHealthIndicator: true
       slidingWindowSize: 10
-      minimumNumberOfCalls: 2
+      minimumNumberOfCalls: 3
       permittedNumberOfCallsInHalfOpenState: 3
       automaticTransitionFromOpenToHalfOpenEnabled: true
-      waitDurationInOpenState: 5s
-      failureRateThreshold: 80
+      waitDurationInOpenState: 20s
+      failureRateThreshold: 20
       eventConsumerBufferSize: 10
